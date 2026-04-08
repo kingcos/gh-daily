@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HistoryView from '../components/HistoryView';
+import ThemeToggle from '../components/ThemeToggle';
+---
+
+<Layout title="gh-daily — History">
+  <div class="mb-4 flex justify-end">
+    <ThemeToggle client:load />
+  </div>
+  <HistoryView client:load />
+</Layout>

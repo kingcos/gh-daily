@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TodayView from '../components/TodayView';
+import ThemeToggle from '../components/ThemeToggle';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Find the latest date with data
+const dataRoot = path.resolve(import.meta.dirname, '../../../data');
+let latestDate = '';
+let daily: any[] = [];
+let weekly: any[] = [];
+let monthly: any[] = [];
+
+if (fs.existsSync(dataRoot)) {
+  const years = fs.readdirSync(dataRoot).filter(f => /^\d{4}$/.test(f)).sort();
+  for (const year of years.reverse()) {
+    const months = fs.readdirSync(path.join(dataRoot, year)).filter(f => /^\d{2}$/.test(f)).sort();
+    for (const month of months.reverse()) {
+      const days = fs.readdirSync(path.join(dataRoot, year, month)).filter(f => /^\d{2}$/.test(f)).sort();
+      for (const day of days.reverse()) {
+        const dirPath = path.join(dataRoot, year, month, day);
+        const dailyPath = path.join(dirPath, 'daily.json');
+        if (fs.existsSync(dailyPath)) {
+          latestDate = `${year}/${month}/${day}`;
+          daily = JSON.parse(fs.readFileSync(path.join(dirPath, 'daily.json'), 'utf-8'));
+          weekly = fs.existsSync(path.join(dirPath, 'weekly.json'))
+            ? JSON.parse(fs.readFileSync(path.join(dirPath, 'weekly.json'), 'utf-8'))
+            : [];
+          monthly = fs.existsSync(path.join(dirPath, 'monthly.json'))
+            ? JSON.parse(fs.readFileSync(path.join(dirPath, 'monthly.json'), 'utf-8'))
+            : [];
+          break;
+        }
+      }
+      if (latestDate) break;
+    }
+    if (latestDate) break;
+  }
+}
+---
+
+<Layout title="gh-daily — Today">
+  <div class="mb-4 flex justify-end">
+    <ThemeToggle client:load />
+  </div>
+  {latestDate ? (
+    <TodayView client:load daily={daily} weekly={weekly} monthly={monthly} date={latestDate} />
+  ) : (
+    <p class="py-8 text-center text-[var(--color-text-muted)]">No data yet. Run the scraper first.</p>
+  )}
+</Layout>

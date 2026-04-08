@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'gh-daily' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="GitHub Trending archive with read tracking" />
+    <title>{title}</title>
+    <script is:inline>
+      const theme = localStorage.getItem('gh-daily-theme');
+      if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen">
+    <header class="border-b border-[var(--color-border)] px-4 py-3">
+      <div class="mx-auto flex max-w-5xl items-center justify-between">
+        <a href={import.meta.env.BASE_URL} class="text-xl font-bold">gh-daily</a>
+        <nav class="flex items-center gap-4 text-sm">
+          <a href={import.meta.env.BASE_URL} class="hover:text-[var(--color-accent)]">Today</a>
+          <a href={`${import.meta.env.BASE_URL}history/`} class="hover:text-[var(--color-accent)]">History</a>
+          <a href={`${import.meta.env.BASE_URL}persistent/`} class="hover:text-[var(--color-accent)]">Persistent</a>
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto max-w-5xl px-4 py-6">
+      <slot />
+    </main>
+  </body>
+</html>

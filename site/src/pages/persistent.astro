@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PersistentView from '../components/PersistentView';
+import ThemeToggle from '../components/ThemeToggle';
+---
+
+<Layout title="gh-daily — Persistent">
+  <div class="mb-4 flex justify-end">
+    <ThemeToggle client:load />
+  </div>
+  <PersistentView client:load />
+</Layout>
+</invoke>
