@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 import AstroPWA from '@vite-pwa/astro';
 
 export default defineConfig({
+  site: 'https://kingcos.github.io',
+  base: '/gh-daily',
   integrations: [
     react(),
     AstroPWA({
