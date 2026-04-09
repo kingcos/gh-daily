@@ -1,16 +1,18 @@
 import type { TrendingRepo, Period } from './types';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 let dateIndex: string[] | null = null;
 
 export async function getDateIndex(): Promise<string[]> {
   if (dateIndex) return dateIndex;
-  const resp = await fetch(`${import.meta.env.BASE_URL}data/index.json`);
+  const resp = await fetch(`${base}/data/index.json`);
   dateIndex = await resp.json();
   return dateIndex!;
 }
 
 export async function loadDay(date: string, period: Period): Promise<TrendingRepo[]> {
-  const url = `${import.meta.env.BASE_URL}data/${date}/${period}.json`;
+  const url = `${base}/data/${date}/${period}.json`;
   try {
     const resp = await fetch(url);
     if (!resp.ok) return [];
