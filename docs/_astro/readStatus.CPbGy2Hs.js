@@ -1,0 +1,1 @@
+const o="gh-daily-read";function c(){try{return JSON.parse(localStorage.getItem(o)||"{}")}catch{return{}}}function s(t,a){return!!c()[`${t}/${a}`]}function i(t,a){const e=c(),n=`${t}/${a}`,r=!e[n];return r?e[n]=!0:delete e[n],localStorage.setItem(o,JSON.stringify(e)),r}export{s as i,i as t};

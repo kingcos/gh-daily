@@ -1,0 +1,1 @@
+let n=null;async function i(){return n||(n=await(await fetch("/gh-dailydata/index.json")).json(),n)}async function c(t,e){const s=`/gh-dailydata/${t}/${e}.json`;try{const r=await fetch(s);return r.ok?await r.json():[]}catch{return[]}}async function u(t,e,s){const o=(await i()).filter(a=>a>=t&&a<=e);return(await Promise.all(o.map(a=>c(a,s)))).flat()}export{i as g,u as l};

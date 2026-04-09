@@ -5,8 +5,8 @@ import ThemeToggle from '../components/ThemeToggle';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Find the latest date with data
-const dataRoot = path.resolve(import.meta.dirname, '../../../data');
+// Find the latest date with data — use process.cwd() which points to site/ during build
+const dataRoot = path.resolve(process.cwd(), '../data');
 let latestDate = '';
 let daily: any[] = [];
 let weekly: any[] = [];
