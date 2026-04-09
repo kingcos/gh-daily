@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TodayView from '../components/TodayView';
-import ThemeToggle from '../components/ThemeToggle';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -41,9 +40,6 @@ if (fs.existsSync(dataRoot)) {
 ---
 
 <Layout title="gh-daily — 今日" active="today">
-  <div class="mb-4 flex justify-end">
-    <ThemeToggle client:load />
-  </div>
   {latestDate ? (
     <TodayView client:load daily={daily} weekly={weekly} monthly={monthly} date={latestDate} />
   ) : (
