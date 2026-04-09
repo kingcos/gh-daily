@@ -37,10 +37,10 @@ export default function HistoryView() {
 
   return (
     <div>
-      <h1 className="mb-4 text-2xl font-bold">History</h1>
+      <h1 className="mb-4 text-2xl font-bold">历史回看</h1>
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <label className="text-sm">
-          From:
+          从:
           <input
             type="date"
             value={toInputDate(startDate)}
@@ -49,7 +49,7 @@ export default function HistoryView() {
           />
         </label>
         <label className="text-sm">
-          To:
+          到:
           <input
             type="date"
             value={toInputDate(endDate)}
@@ -62,13 +62,13 @@ export default function HistoryView() {
           onChange={(e) => setPeriod(e.target.value as Period)}
           className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-2 py-1 text-sm text-[var(--color-text)]"
         >
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
+          <option value="daily">日榜</option>
+          <option value="weekly">周榜</option>
+          <option value="monthly">月榜</option>
         </select>
       </div>
       {loading ? (
-        <p className="py-8 text-center text-[var(--color-text-muted)]">Loading...</p>
+        <p className="py-8 text-center text-[var(--color-text-muted)]">加载中...</p>
       ) : (
         <RepoList
           repos={repos}

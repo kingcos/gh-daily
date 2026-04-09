@@ -63,24 +63,24 @@ export default function PersistentView() {
 
   return (
     <div>
-      <h1 className="mb-4 text-2xl font-bold">Persistent Trending</h1>
+      <h1 className="mb-4 text-2xl font-bold">常驻榜 — 反复上榜的仓库</h1>
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <select
           value={window}
           onChange={(e) => setWindow(Number(e.target.value) as DateWindow)}
           className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-2 py-1 text-sm text-[var(--color-text)]"
         >
-          <option value={7}>Last 7 days</option>
-          <option value={30}>Last 30 days</option>
+          <option value={7}>近 7 天</option>
+          <option value={30}>近 30 天</option>
         </select>
         <select
           value={period}
           onChange={(e) => setPeriod(e.target.value as Period)}
           className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-2 py-1 text-sm text-[var(--color-text)]"
         >
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
+          <option value="daily">日榜</option>
+          <option value="weekly">周榜</option>
+          <option value="monthly">月榜</option>
         </select>
         <label className="flex items-center gap-1.5 text-sm cursor-pointer">
           <input
@@ -92,14 +92,14 @@ export default function PersistentView() {
               try { localStorage.setItem('gh-daily-hide-read', next ? 'true' : 'false'); } catch {}
             }}
           />
-          Hide read
+          隐藏已读
         </label>
         <span className="ml-auto text-xs text-[var(--color-text-muted)]">{filtered.length} repos</span>
       </div>
       {loading ? (
-        <p className="py-8 text-center text-[var(--color-text-muted)]">Loading...</p>
+        <p className="py-8 text-center text-[var(--color-text-muted)]">加载中...</p>
       ) : filtered.length === 0 ? (
-        <p className="py-8 text-center text-[var(--color-text-muted)]">No repos to show.</p>
+        <p className="py-8 text-center text-[var(--color-text-muted)]">暂无数据</p>
       ) : (
         filtered.map((r) => (
           <PersistentRow
@@ -132,7 +132,7 @@ function PersistentRow({ repo, onReadChange }: { repo: RepoWithCount; onReadChan
             {repo.owner}/{repo.repo}
           </a>
           <span className="shrink-0 rounded bg-[var(--color-accent)] px-1.5 py-0.5 text-xs text-white font-medium">
-            {repo.count}x
+            {repo.count}次
           </span>
           {repo.language && (
             <span className="text-xs text-[var(--color-text-muted)] shrink-0">{repo.language}</span>
@@ -142,7 +142,7 @@ function PersistentRow({ repo, onReadChange }: { repo: RepoWithCount; onReadChan
           <p className="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2">{repo.description}</p>
         )}
         <div className="mt-1 text-xs text-[var(--color-text-muted)]">
-          {repo.total_stars.toLocaleString()} total stars
+          {repo.total_stars.toLocaleString()} 总星数
         </div>
       </div>
       <button
@@ -153,7 +153,7 @@ function PersistentRow({ repo, onReadChange }: { repo: RepoWithCount; onReadChan
         }}
         className="shrink-0 rounded px-2 py-1 text-xs border border-[var(--color-border)] hover:bg-[var(--color-surface)]"
       >
-        {read ? 'Unread' : 'Read'}
+        {read ? '未读' : '已读'}
       </button>
     </div>
   );

@@ -54,7 +54,7 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
         {showSearch && (
           <input
             type="text"
-            placeholder="Search repos..."
+            placeholder="搜索仓库..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm text-[var(--color-text)] placeholder-[var(--color-text-muted)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
@@ -62,21 +62,21 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
         )}
         <label className="flex items-center gap-1.5 text-sm cursor-pointer">
           <input type="checkbox" checked={hideRead} onChange={toggleHideRead} />
-          Hide read
+          隐藏已读
         </label>
         <button
           onClick={handleExport}
           className="rounded border border-[var(--color-border)] px-2 py-1 text-xs hover:bg-[var(--color-surface)]"
         >
-          Export MD
+          导出 MD
         </button>
-        {exportMsg && <span className="text-xs text-green-600">{exportMsg}</span>}
+        {exportMsg && <span className="text-xs text-green-600">已复制并下载</span>}
         <span className="ml-auto text-xs text-[var(--color-text-muted)]">
           {filtered.length} repos
         </span>
       </div>
       {filtered.length === 0 ? (
-        <p className="py-8 text-center text-[var(--color-text-muted)]">No repos to show.</p>
+        <p className="py-8 text-center text-[var(--color-text-muted)]">暂无数据</p>
       ) : (
         filtered.map((r) => (
           <RepoRow

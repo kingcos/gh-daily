@@ -10,9 +10,9 @@ interface Props {
 }
 
 const TABS: { label: string; value: Period }[] = [
-  { label: 'Daily', value: 'daily' },
-  { label: 'Weekly', value: 'weekly' },
-  { label: 'Monthly', value: 'monthly' },
+  { label: '日榜', value: 'daily' },
+  { label: '周榜', value: 'weekly' },
+  { label: '月榜', value: 'monthly' },
 ];
 
 export default function TodayView({ daily, weekly, monthly, date }: Props) {
@@ -22,7 +22,7 @@ export default function TodayView({ daily, weekly, monthly, date }: Props) {
 
   return (
     <div>
-      <h1 className="mb-1 text-2xl font-bold">Trending — {date}</h1>
+      <h1 className="mb-1 text-2xl font-bold">今日 Trending — {date}</h1>
       <div className="mb-4 flex gap-1">
         {TABS.map((t) => (
           <button

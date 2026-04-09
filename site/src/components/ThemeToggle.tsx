@@ -18,9 +18,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       className="rounded border border-[var(--color-border)] px-2 py-1 text-xs hover:bg-[var(--color-surface)]"
-      title="Toggle dark mode"
+      title="切换主题"
     >
-      {dark ? 'Light' : 'Dark'}
+      {dark ? '浅色' : '深色'}
     </button>
   );
 }

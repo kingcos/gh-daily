@@ -55,16 +55,16 @@ export default function RepoRow({ repo, onReadChange }: Props) {
           </p>
         )}
         <div className="mt-1 flex items-center gap-4 text-xs text-[var(--color-text-muted)]">
-          <span title="Stars gained in period">+{repo.stars_period.toLocaleString()}</span>
-          <span title="Total stars">{repo.total_stars.toLocaleString()} total</span>
+          <span title="周期内新增">+{repo.stars_period.toLocaleString()}</span>
+          <span title="总星数">{repo.total_stars.toLocaleString()} 总星数</span>
         </div>
       </div>
       <button
         onClick={handleToggle}
         className="shrink-0 rounded px-2 py-1 text-xs border border-[var(--color-border)] hover:bg-[var(--color-surface)]"
-        title={read ? 'Mark as unread' : 'Mark as read'}
+        title={read ? '标记为未读' : '标记为已读'}
       >
-        {read ? 'Unread' : 'Read'}
+        {read ? '未读' : '已读'}
       </button>
     </div>
   );

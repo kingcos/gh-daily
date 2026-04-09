@@ -40,13 +40,13 @@ if (fs.existsSync(dataRoot)) {
 }
 ---
 
-<Layout title="gh-daily — Today">
+<Layout title="gh-daily — 今日">
   <div class="mb-4 flex justify-end">
     <ThemeToggle client:load />
   </div>
   {latestDate ? (
     <TodayView client:load daily={daily} weekly={weekly} monthly={monthly} date={latestDate} />
   ) : (
-    <p class="py-8 text-center text-[var(--color-text-muted)]">No data yet. Run the scraper first.</p>
+    <p class="py-8 text-center text-[var(--color-text-muted)]">暂无数据，请先运行爬虫。</p>
   )}
 </Layout>
