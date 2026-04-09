@@ -38,7 +38,7 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
     const md = exportMarkdown(filtered, title);
     await copyToClipboard(md);
     downloadFile(md, `${title.replace(/\s+/g, '-').toLowerCase()}.md`);
-    setExportMsg('Copied & downloaded!');
+    setExportMsg('done');
     setTimeout(() => setExportMsg(''), 2000);
   };
 
@@ -50,41 +50,47 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-center gap-3">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
         {showSearch && (
           <input
             type="text"
             placeholder="搜索仓库..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm text-[var(--color-text)] placeholder-[var(--color-text-muted)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
+            className="w-48 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-1.5 text-sm text-[var(--color-text)] placeholder-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/40 focus:border-[var(--color-accent)]"
           />
         )}
-        <label className="flex items-center gap-1.5 text-sm cursor-pointer">
-          <input type="checkbox" checked={hideRead} onChange={toggleHideRead} />
+        <label className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={hideRead}
+            onChange={toggleHideRead}
+            className="rounded"
+          />
           隐藏已读
         </label>
         <button
           onClick={handleExport}
-          className="rounded border border-[var(--color-border)] px-2 py-1 text-xs hover:bg-[var(--color-surface)]"
+          className="rounded-md border border-[var(--color-border)] px-2.5 py-1 text-xs text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] transition-colors"
         >
-          导出 MD
+          {exportMsg ? '已导出' : '导出 MD'}
         </button>
-        {exportMsg && <span className="text-xs text-green-600">已复制并下载</span>}
         <span className="ml-auto text-xs text-[var(--color-text-muted)]">
-          {filtered.length} repos
+          {filtered.length} 个仓库
         </span>
       </div>
       {filtered.length === 0 ? (
-        <p className="py-8 text-center text-[var(--color-text-muted)]">暂无数据</p>
+        <p className="py-12 text-center text-[var(--color-text-muted)]">暂无数据</p>
       ) : (
-        filtered.map((r) => (
-          <RepoRow
-            key={`${r.owner}/${r.repo}-${r.trending_type}-${r.scraped_at}`}
-            repo={r}
-            onReadChange={() => setReadVersion((v) => v + 1)}
-          />
-        ))
+        <div className="flex flex-col gap-2">
+          {filtered.map((r) => (
+            <RepoRow
+              key={`${r.owner}/${r.repo}-${r.trending_type}-${r.scraped_at}`}
+              repo={r}
+              onReadChange={() => setReadVersion((v) => v + 1)}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

@@ -3,10 +3,17 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  active?: 'today' | 'history' | 'persistent';
 }
 
-const { title = 'gh-daily' } = Astro.props;
+const { title = 'gh-daily', active = 'today' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navItems = [
+  { href: `${base}/`, label: '今日', key: 'today' },
+  { href: `${base}/history/`, label: '历史', key: 'history' },
+  { href: `${base}/persistent/`, label: '常驻榜', key: 'persistent' },
+] as const;
 ---
 
 <html lang="zh-CN">
@@ -26,19 +33,39 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       }
     </script>
   </head>
-  <body class="min-h-screen">
-    <header class="border-b border-[var(--color-border)] px-4 py-3">
+  <body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-10 border-b border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-sm px-4 py-3">
       <div class="mx-auto flex max-w-5xl items-center justify-between">
-        <a href={`${base}/`} class="text-xl font-bold">gh-daily</a>
-        <nav class="flex items-center gap-4 text-sm">
-          <a href={`${base}/`} class="hover:text-[var(--color-accent)]">今日</a>
-          <a href={`${base}/history/`} class="hover:text-[var(--color-accent)]">历史</a>
-          <a href={`${base}/persistent/`} class="hover:text-[var(--color-accent)]">常驻榜</a>
+        <a href={`${base}/`} class="text-lg font-bold tracking-tight">
+          <span class="text-[var(--color-accent)]">gh</span>-daily
+        </a>
+        <nav class="flex items-center gap-1 text-sm">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'rounded-md px-3 py-1.5 transition-colors',
+                active === item.key
+                  ? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)] font-medium'
+                  : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)]',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
-    <main class="mx-auto max-w-5xl px-4 py-6">
+    <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
       <slot />
     </main>
+    <footer class="border-t border-[var(--color-border)] px-4 py-4">
+      <div class="mx-auto max-w-5xl flex items-center justify-between text-xs text-[var(--color-text-muted)]">
+        <span>GitHub Trending 每日归档</span>
+        <a href="https://github.com/kingcos/gh-daily" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-accent)]">
+          GitHub
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

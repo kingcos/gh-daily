@@ -22,16 +22,19 @@ export default function TodayView({ daily, weekly, monthly, date }: Props) {
 
   return (
     <div>
-      <h1 className="mb-1 text-2xl font-bold">今日 Trending — {date}</h1>
-      <div className="mb-4 flex gap-1">
+      <h1 className="mb-4 text-2xl font-bold">
+        今日 Trending
+        <span className="ml-2 text-base font-normal text-[var(--color-text-muted)]">{date}</span>
+      </h1>
+      <div className="mb-5 inline-flex rounded-lg border border-[var(--color-border)] p-0.5">
         {TABS.map((t) => (
           <button
             key={t.value}
             onClick={() => setTab(t.value)}
-            className={`rounded px-3 py-1 text-sm ${
+            className={`rounded-md px-4 py-1.5 text-sm transition-colors ${
               tab === t.value
-                ? 'bg-[var(--color-accent)] text-white'
-                : 'border border-[var(--color-border)] hover:bg-[var(--color-surface)]'
+                ? 'bg-[var(--color-accent)] text-white font-medium shadow-sm'
+                : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
             }`}
           >
             {t.label}
