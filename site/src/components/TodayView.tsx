@@ -15,6 +15,11 @@ const TABS: { label: string; value: Period }[] = [
   { label: '月榜', value: 'monthly' },
 ];
 
+function formatDate(d: string) {
+  const [y, m, day] = d.split('/');
+  return `${y} 年 ${Number(m)} 月 ${Number(day)} 日`;
+}
+
 export default function TodayView({ daily, weekly, monthly, date }: Props) {
   const [tab, setTab] = useState<Period>('daily');
 
@@ -24,7 +29,7 @@ export default function TodayView({ daily, weekly, monthly, date }: Props) {
     <div>
       <h1 className="mb-4 text-2xl font-bold">
         今日 Trending
-        <span className="ml-2 text-base font-normal text-[var(--color-text-muted)]">{date}</span>
+        <span className="ml-2 text-base font-normal text-[var(--color-text-muted)]">{formatDate(date)}</span>
       </h1>
       <div className="mb-5 inline-flex rounded-lg border border-[var(--color-border)] p-0.5">
         {TABS.map((t) => (

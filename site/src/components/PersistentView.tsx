@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { Period, DateWindow } from '../lib/types';
 import { getDateIndex, loadDateRange } from '../lib/data';
 import { isRead, toggleRead } from '../lib/readStatus';
+import { RepoListSkeleton } from './Skeleton';
 
 interface RepoWithCount {
   owner: string;
@@ -99,7 +100,7 @@ export default function PersistentView() {
         <span className="ml-auto text-xs text-[var(--color-text-muted)]">{filtered.length} 个仓库</span>
       </div>
       {loading ? (
-        <p className="py-12 text-center text-[var(--color-text-muted)]">加载中...</p>
+        <RepoListSkeleton />
       ) : filtered.length === 0 ? (
         <p className="py-12 text-center text-[var(--color-text-muted)]">暂无数据</p>
       ) : (

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { TrendingRepo, Period } from '../lib/types';
 import { getDateIndex, loadDateRange } from '../lib/data';
 import RepoList from './RepoList';
+import { RepoListSkeleton } from './Skeleton';
 
 export default function HistoryView() {
   const [startDate, setStartDate] = useState('');
@@ -69,7 +70,7 @@ export default function HistoryView() {
         </select>
       </div>
       {loading ? (
-        <p className="py-12 text-center text-[var(--color-text-muted)]">加载中...</p>
+        <RepoListSkeleton />
       ) : (
         <RepoList
           repos={repos}
