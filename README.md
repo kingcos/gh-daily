@@ -6,7 +6,7 @@ A Python scraper runs daily via GitHub Actions, saving trending repository data 
 
 ## Features
 
-- **Daily scraping** of GitHub Trending (daily / weekly / monthly periods)
+- **3-hour scraping** of GitHub Trending (daily / weekly / monthly periods)
 - **Three views**: Today, History (date range + filters), Persistent (most frequently trending)
 - **Read tracking**: mark repos as read, visually fade them, toggle "hide read"
 - **Dark mode**: auto-detects system preference, manual toggle
@@ -18,9 +18,10 @@ A Python scraper runs daily via GitHub Actions, saving trending repository data 
 ## How It Works
 
 ```
-GitHub Actions (UTC 00:00)
+GitHub Actions (every ~3 hours, UTC cron)
   → scraper/scraper.py fetches github.com/trending
-  → saves to data/YYYY/MM/DD/{daily,weekly,monthly}.json
+  → de-duplicates repo rows and skips write when only scraped_at changed
+  → saves to data/YYYY/MM/DD/{daily,weekly,monthly}.json (Asia/Shanghai date)
   → commits to main
   → triggers site rebuild & deploy to GitHub Pages
 ```
@@ -29,7 +30,7 @@ GitHub Actions (UTC 00:00)
 
 1. Fork this repository
 2. Enable GitHub Pages in repo Settings → Pages → Source: "GitHub Actions"
-3. The scraper runs automatically at UTC 00:00 daily
+3. The scraper runs automatically every ~3 hours (UTC cron)
 4. Trigger a manual run: Actions → "Scrape GitHub Trending" → Run workflow
 5. After the first data commit, the site deploys automatically
 

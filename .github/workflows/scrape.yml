@@ -2,15 +2,22 @@ name: Scrape GitHub Trending
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # UTC 00:00 daily
+    - cron: '15 */3 * * *'  # every 3 hours (UTC), ~8x/day
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: scrape-trending
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+      SCRAPER_TZ: Asia/Shanghai
     steps:
       - uses: actions/checkout@v4
 

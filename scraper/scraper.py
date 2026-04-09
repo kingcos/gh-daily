@@ -7,6 +7,7 @@ import os
 import re
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import requests
 from bs4 import BeautifulSoup
@@ -16,6 +17,7 @@ log = logging.getLogger(__name__)
 
 PERIODS = ["daily", "weekly", "monthly"]
 BASE_URL = "https://github.com/trending"
+DEFAULT_TZ = "UTC"
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -40,7 +42,36 @@ def parse_period_stars(text: str) -> int:
     return 0
 
 
-def scrape_trending(period: str) -> list[dict]:
+def get_scrape_timezone():
+    """Return timezone configured by SCRAPER_TZ, fallback to UTC."""
+    name = os.getenv("SCRAPER_TZ", DEFAULT_TZ)
+    try:
+        return ZoneInfo(name), name
+    except ZoneInfoNotFoundError:
+        log.warning("Invalid SCRAPER_TZ=%s, fallback to %s", name, DEFAULT_TZ)
+        return timezone.utc, DEFAULT_TZ
+
+
+def normalize_repos(repos: list[dict]) -> list[dict]:
+    """Normalize repos for dedup checks (ignore scraped_at)."""
+    return [{k: v for k, v in r.items() if k != "scraped_at"} for r in repos]
+
+
+def has_meaningful_changes(out_path: str, repos: list[dict]) -> bool:
+    """Return True if repo payload changed meaningfully vs existing JSON file."""
+    if not os.path.exists(out_path):
+        return True
+
+    try:
+        with open(out_path, encoding="utf-8") as f:
+            existing = json.load(f)
+    except Exception:
+        return True
+
+    return normalize_repos(existing) != normalize_repos(repos)
+
+
+def scrape_trending(period: str, now_iso: str) -> list[dict]:
     """Scrape trending repos for a given period (daily/weekly/monthly)."""
     url = f"{BASE_URL}?since={period}"
     log.info("Fetching %s", url)
@@ -56,8 +87,8 @@ def scrape_trending(period: str) -> list[dict]:
             f"No trending repos found for {period}; GitHub markup may have changed."
         )
 
-    now = datetime.now(timezone.utc).isoformat()
     repos = []
+    seen = set()
 
     for row in rows:
         link = row.select_one("h2 a")
@@ -69,6 +100,11 @@ def scrape_trending(period: str) -> list[dict]:
         if len(parts) < 2:
             continue
         owner, repo = parts[0], parts[1]
+        key = f"{owner}/{repo}".lower()
+        if key in seen:
+            log.warning("Duplicate repo in %s results, skipping %s/%s", period, owner, repo)
+            continue
+        seen.add(key)
 
         desc_el = row.select_one("p")
         description = desc_el.get_text(strip=True) if desc_el else ""
@@ -95,7 +131,7 @@ def scrape_trending(period: str) -> list[dict]:
                 "total_stars": total_stars,
                 "stars_period": stars_period,
                 "url": f"https://github.com/{owner}/{repo}",
-                "scraped_at": now,
+                "scraped_at": now_iso,
                 "trending_type": period,
                 "trending_lang": "",
             }
@@ -105,21 +141,28 @@ def scrape_trending(period: str) -> list[dict]:
 
 
 def main():
-    date_str = datetime.now(timezone.utc).strftime("%Y/%m/%d")
+    tz, tz_name = get_scrape_timezone()
+    now = datetime.now(tz)
+    date_str = now.strftime("%Y/%m/%d")
+    now_iso = now.isoformat()
+    log.info("Scrape clock: %s (%s)", now_iso, tz_name)
     base_dir = os.path.join(os.path.dirname(__file__), "..", "data", date_str)
     os.makedirs(base_dir, exist_ok=True)
 
     success = True
     for period in PERIODS:
         try:
-            repos = scrape_trending(period)
+            repos = scrape_trending(period, now_iso)
             if not repos:
                 raise RuntimeError(f"Scrape returned 0 repos for {period}")
 
             out_path = os.path.join(base_dir, f"{period}.json")
-            with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(repos, f, ensure_ascii=False, indent=2)
-            log.info("Wrote %d repos to %s", len(repos), out_path)
+            if has_meaningful_changes(out_path, repos):
+                with open(out_path, "w", encoding="utf-8") as f:
+                    json.dump(repos, f, ensure_ascii=False, indent=2)
+                log.info("Wrote %d repos to %s", len(repos), out_path)
+            else:
+                log.info("No meaningful change for %s, skip writing %s", period, out_path)
 
             # Validate: all entries must have stars_period
             empty = [r for r in repos if r["stars_period"] == 0]
