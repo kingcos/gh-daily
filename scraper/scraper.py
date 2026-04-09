@@ -51,6 +51,10 @@ def scrape_trending(period: str) -> list[dict]:
     soup = BeautifulSoup(resp.text, "html.parser")
     rows = soup.select("article.Box-row")
     log.info("Found %d repos for %s", len(rows), period)
+    if not rows:
+        raise RuntimeError(
+            f"No trending repos found for {period}; GitHub markup may have changed."
+        )
 
     now = datetime.now(timezone.utc).isoformat()
     repos = []
@@ -109,6 +113,9 @@ def main():
     for period in PERIODS:
         try:
             repos = scrape_trending(period)
+            if not repos:
+                raise RuntimeError(f"Scrape returned 0 repos for {period}")
+
             out_path = os.path.join(base_dir, f"{period}.json")
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(repos, f, ensure_ascii=False, indent=2)

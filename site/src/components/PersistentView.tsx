@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { TrendingRepo, Period, DateWindow } from '../lib/types';
+import type { Period, DateWindow } from '../lib/types';
 import { getDateIndex, loadDateRange } from '../lib/data';
 import { isRead, toggleRead } from '../lib/readStatus';
 
@@ -18,37 +18,44 @@ export default function PersistentView() {
   const [period, setPeriod] = useState<Period>('daily');
   const [repos, setRepos] = useState<RepoWithCount[]>([]);
   const [loading, setLoading] = useState(false);
+  const [, setReadVersion] = useState(0);
   const [hideRead, setHideRead] = useState(() => {
     try { return localStorage.getItem('gh-daily-hide-read') === 'true'; } catch { return false; }
   });
 
   useEffect(() => {
     (async () => {
-      setLoading(true);
-      const dates = await getDateIndex();
-      if (dates.length === 0) { setLoading(false); return; }
-      const end = dates[dates.length - 1];
-      const start = dates[Math.max(0, dates.length - window)];
-      const all = await loadDateRange(start, end, period);
-
-      const countMap = new Map<string, RepoWithCount>();
-      for (const r of all) {
-        const key = `${r.owner}/${r.repo}`;
-        const existing = countMap.get(key);
-        if (existing) {
-          existing.count++;
-          if (r.total_stars > existing.total_stars) existing.total_stars = r.total_stars;
-        } else {
-          countMap.set(key, {
-            owner: r.owner, repo: r.repo, description: r.description,
-            language: r.language, url: r.url, total_stars: r.total_stars, count: 1,
-          });
+      try {
+        setLoading(true);
+        const dates = await getDateIndex();
+        if (dates.length === 0) {
+          setRepos([]);
+          return;
         }
-      }
+        const end = dates[dates.length - 1];
+        const start = dates[Math.max(0, dates.length - window)];
+        const all = await loadDateRange(start, end, period);
 
-      const sorted = [...countMap.values()].sort((a, b) => b.count - a.count || b.total_stars - a.total_stars);
-      setRepos(sorted);
-      setLoading(false);
+        const countMap = new Map<string, RepoWithCount>();
+        for (const r of all) {
+          const key = `${r.owner}/${r.repo}`;
+          const existing = countMap.get(key);
+          if (existing) {
+            existing.count++;
+            if (r.total_stars > existing.total_stars) existing.total_stars = r.total_stars;
+          } else {
+            countMap.set(key, {
+              owner: r.owner, repo: r.repo, description: r.description,
+              language: r.language, url: r.url, total_stars: r.total_stars, count: 1,
+            });
+          }
+        }
+
+        const sorted = [...countMap.values()].sort((a, b) => b.count - a.count || b.total_stars - a.total_stars);
+        setRepos(sorted);
+      } finally {
+        setLoading(false);
+      }
     })();
   }, [window, period]);
 
@@ -95,14 +102,18 @@ export default function PersistentView() {
         <p className="py-8 text-center text-[var(--color-text-muted)]">No repos to show.</p>
       ) : (
         filtered.map((r) => (
-          <PersistentRow key={`${r.owner}/${r.repo}`} repo={r} />
+          <PersistentRow
+            key={`${r.owner}/${r.repo}`}
+            repo={r}
+            onReadChange={() => setReadVersion((v) => v + 1)}
+          />
         ))
       )}
     </div>
   );
 }
 
-function PersistentRow({ repo }: { repo: RepoWithCount }) {
+function PersistentRow({ repo, onReadChange }: { repo: RepoWithCount; onReadChange?: () => void }) {
   const [read, setRead] = useState(() => isRead(repo.owner, repo.repo));
 
   return (
@@ -135,7 +146,11 @@ function PersistentRow({ repo }: { repo: RepoWithCount }) {
         </div>
       </div>
       <button
-        onClick={() => { const v = toggleRead(repo.owner, repo.repo); setRead(v); }}
+        onClick={() => {
+          const v = toggleRead(repo.owner, repo.repo);
+          setRead(v);
+          onReadChange?.();
+        }}
         className="shrink-0 rounded px-2 py-1 text-xs border border-[var(--color-border)] hover:bg-[var(--color-surface)]"
       >
         {read ? 'Unread' : 'Read'}

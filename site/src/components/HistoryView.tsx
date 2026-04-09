@@ -1,10 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import type { TrendingRepo, Period } from '../lib/types';
 import { getDateIndex, loadDateRange } from '../lib/data';
 import RepoList from './RepoList';
 
 export default function HistoryView() {
-  const [dates, setDates] = useState<string[]>([]);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [period, setPeriod] = useState<Period>('daily');
@@ -13,7 +12,6 @@ export default function HistoryView() {
 
   useEffect(() => {
     getDateIndex().then((d) => {
-      setDates(d);
       if (d.length > 0) {
         setEndDate(d[d.length - 1]);
         setStartDate(d[Math.max(0, d.length - 7)]);

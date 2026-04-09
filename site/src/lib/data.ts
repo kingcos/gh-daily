@@ -6,9 +6,16 @@ let dateIndex: string[] | null = null;
 
 export async function getDateIndex(): Promise<string[]> {
   if (dateIndex) return dateIndex;
-  const resp = await fetch(`${base}/data/index.json`);
-  dateIndex = await resp.json();
-  return dateIndex!;
+  try {
+    const resp = await fetch(`${base}/data/index.json`, { cache: 'no-store' });
+    if (!resp.ok) return [];
+    const data = await resp.json();
+    if (!Array.isArray(data)) return [];
+    dateIndex = data;
+    return dateIndex;
+  } catch {
+    return [];
+  }
 }
 
 export async function loadDay(date: string, period: Period): Promise<TrendingRepo[]> {

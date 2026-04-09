@@ -14,6 +14,7 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
   const [hideRead, setHideRead] = useState(() => {
     try { return localStorage.getItem('gh-daily-hide-read') === 'true'; } catch { return false; }
   });
+  const [readVersion, setReadVersion] = useState(0);
   const [search, setSearch] = useState('');
   const [exportMsg, setExportMsg] = useState('');
 
@@ -31,7 +32,7 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
       );
     }
     return list;
-  }, [repos, hideRead, search]);
+  }, [repos, hideRead, search, readVersion]);
 
   const handleExport = async () => {
     const md = exportMarkdown(filtered, title);
@@ -78,7 +79,11 @@ export default function RepoList({ repos, title, showSearch = false }: Props) {
         <p className="py-8 text-center text-[var(--color-text-muted)]">No repos to show.</p>
       ) : (
         filtered.map((r) => (
-          <RepoRow key={`${r.owner}/${r.repo}-${r.trending_type}-${r.scraped_at}`} repo={r} />
+          <RepoRow
+            key={`${r.owner}/${r.repo}-${r.trending_type}-${r.scraped_at}`}
+            repo={r}
+            onReadChange={() => setReadVersion((v) => v + 1)}
+          />
         ))
       )}
     </div>

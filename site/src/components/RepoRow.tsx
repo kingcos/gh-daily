@@ -9,12 +9,18 @@ const LANG_COLORS: Record<string, string> = {
   Shell: '#89e051', Dart: '#00B4AB', Zig: '#ec915c',
 };
 
-export default function RepoRow({ repo }: { repo: TrendingRepo }) {
+interface Props {
+  repo: TrendingRepo;
+  onReadChange?: () => void;
+}
+
+export default function RepoRow({ repo, onReadChange }: Props) {
   const [read, setRead] = useState(() => isRead(repo.owner, repo.repo));
 
   const handleToggle = () => {
     const newVal = toggleRead(repo.owner, repo.repo);
     setRead(newVal);
+    onReadChange?.();
   };
 
   return (

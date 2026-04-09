@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gh-daily-v1';
+const CACHE_NAME = 'gh-daily-v2';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -16,13 +16,32 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  const isDataJson = url.pathname.includes('/data/') && url.pathname.endsWith('.json');
+  const isIndexJson = url.pathname.endsWith('/data/index.json');
 
-  // Cache-first for data JSON, network-first for everything else
-  if (request.url.includes('/data/') && request.url.endsWith('.json')) {
+  // index.json changes daily; prefer network and fallback to cache.
+  if (isIndexJson) {
+    event.respondWith(
+      fetch(request)
+        .then((resp) => {
+          if (resp.ok) {
+            const clone = resp.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return resp;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Daily snapshot files are immutable after commit, so cache-first is safe.
+  if (isDataJson) {
     event.respondWith(
       caches.open(CACHE_NAME).then((cache) =>
         cache.match(request).then((cached) => cached || fetch(request).then((resp) => {
-          cache.put(request, resp.clone());
+          if (resp.ok) cache.put(request, resp.clone());
           return resp;
         }))
       )
