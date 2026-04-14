@@ -22,6 +22,15 @@ const navItems = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="GitHub Trending 归档与浏览" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href={`${base}/manifest.webmanifest`} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={`${base}/favicon.ico`} sizes="any" />
+    <link rel="apple-touch-icon" href={`${base}/icon-192.png`} />
     <title>{title}</title>
     <script is:inline data-base={base}>
       const base = document.currentScript?.getAttribute('data-base') || '';
@@ -30,7 +39,9 @@ const navItems = [
         document.documentElement.classList.add('dark');
       }
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register(`${base}/sw.js`);
+        navigator.serviceWorker.register(`${base}/sw.js`).catch(() => {
+          // Keep page usable even if SW registration fails.
+        });
       }
     </script>
   </head>

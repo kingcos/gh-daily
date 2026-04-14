@@ -2,7 +2,7 @@
 
 Archive and browse GitHub Trending history with read tracking.
 
-A Python scraper runs daily via GitHub Actions, saving trending repository data as JSON. An Astro static site lets you browse today's trending, explore history, and find persistently popular repos — with localStorage-based read/unread tracking.
+A Python scraper runs every ~3 hours via GitHub Actions, saving trending repository data as JSON. An Astro static site lets you browse today's trending, explore history, and find persistently popular repos — with localStorage-based read/unread tracking.
 
 ## Features
 
@@ -12,7 +12,8 @@ A Python scraper runs daily via GitHub Actions, saving trending repository data 
 - **Dark mode**: auto-detects system preference, manual toggle
 - **Search**: client-side filtering by repo name and description
 - **Export**: current view as Markdown (clipboard + file download)
-- **Offline support**: service worker caches assets and data
+- **Installable PWA**: web app manifest + app icons + standalone mode
+- **Offline support**: service worker caches assets and data with offline navigation fallback
 - **Zero cost**: GitHub Actions + GitHub Pages only
 
 ## How It Works

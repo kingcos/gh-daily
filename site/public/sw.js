@@ -1,7 +1,34 @@
-const CACHE_NAME = 'gh-daily-v2';
+const CACHE_NAME = 'gh-daily-v3';
+const SCOPE = new URL(self.registration.scope).pathname;
+const APP_SHELL = [
+  SCOPE,
+  `${SCOPE}index.html`,
+  `${SCOPE}history/`,
+  `${SCOPE}persistent/`,
+  `${SCOPE}manifest.webmanifest`,
+  `${SCOPE}favicon.ico`,
+  `${SCOPE}favicon.svg`,
+  `${SCOPE}icon-192.png`,
+  `${SCOPE}icon-512.png`,
+];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) =>
+      Promise.all(
+        APP_SHELL.map(async (asset) => {
+          try {
+            const resp = await fetch(asset, { cache: 'no-store' });
+            if (resp.ok) {
+              await cache.put(asset, resp.clone());
+            }
+          } catch {
+            // Ignore install-time fetch failures and rely on runtime cache.
+          }
+        })
+      ).then(() => self.skipWaiting())
+    )
+  );
 });
 
 self.addEventListener('activate', (event) => {
@@ -16,9 +43,37 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
+
   const url = new URL(request.url);
+  const isSameOrigin = url.origin === self.location.origin;
+  if (!isSameOrigin) return;
+
+  const isNavigate = request.mode === 'navigate';
   const isDataJson = url.pathname.includes('/data/') && url.pathname.endsWith('.json');
   const isIndexJson = url.pathname.endsWith('/data/index.json');
+
+  // HTML navigation should still work offline.
+  if (isNavigate) {
+    event.respondWith(
+      fetch(request)
+        .then((resp) => {
+          if (resp.ok) {
+            const clone = resp.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return resp;
+        })
+        .catch(async () => {
+          const cachedPage = await caches.match(request);
+          if (cachedPage) return cachedPage;
+          return (
+            (await caches.match(`${SCOPE}index.html`)) ||
+            (await caches.match(SCOPE))
+          );
+        })
+    );
+    return;
+  }
 
   // index.json changes daily; prefer network and fallback to cache.
   if (isIndexJson) {
