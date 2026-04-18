@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "thunderbolt",
+    "owner": "thunderbird",
+    "description": "AI You Control: Choose your models. Own your data. Eliminate vendor lock-in.",
+    "language": "TypeScript",
+    "total_stars": 1421,
+    "stars_period": 458,
+    "url": "https://github.com/thunderbird/thunderbolt",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "omi",
+    "owner": "BasedHardware",
+    "description": "AI that sees your screen, listens to your conversations and tells you what to do",
+    "language": "Dart",
+    "total_stars": 10306,
+    "stars_period": 617,
+    "url": "https://github.com/BasedHardware/omi",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "openai-agents-python",
+    "owner": "openai",
+    "description": "A lightweight, powerful framework for multi-agent workflows",
+    "language": "Python",
+    "total_stars": 22209,
+    "stars_period": 473,
+    "url": "https://github.com/openai/openai-agents-python",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "evolver",
+    "owner": "EvoMap",
+    "description": "The GEP-Powered Self-Evolution Engine for AI Agents. Genome Evolution Protocol. | evomap.ai",
+    "language": "JavaScript",
+    "total_stars": 4903,
+    "stars_period": 1150,
+    "url": "https://github.com/EvoMap/evolver",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "DeepGEMM",
+    "owner": "deepseek-ai",
+    "description": "DeepGEMM: clean and efficient FP8 GEMM kernels with fine-grained scaling",
+    "language": "Cuda",
+    "total_stars": 6482,
+    "stars_period": 31,
+    "url": "https://github.com/deepseek-ai/DeepGEMM",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "dive-into-llms",
+    "owner": "Lordog",
+    "description": "《动手学大模型Dive into LLMs》系列编程实践教程",
+    "language": "Jupyter Notebook",
+    "total_stars": 31967,
+    "stars_period": 562,
+    "url": "https://github.com/Lordog/dive-into-llms",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "claude-desktop-debian",
+    "owner": "aaddrick",
+    "description": "Claude Desktop for Debian-based Linux distributions",
+    "language": "Shell",
+    "total_stars": 3428,
+    "stars_period": 39,
+    "url": "https://github.com/aaddrick/claude-desktop-debian",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "rustdesk",
+    "owner": "rustdesk",
+    "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+    "language": "Rust",
+    "total_stars": 111972,
+    "stars_period": 351,
+    "url": "https://github.com/rustdesk/rustdesk",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "android-reverse-engineering-skill",
+    "owner": "SimoneAvogadro",
+    "description": "Claude Code skill to support Android app's reverse engineering",
+    "language": "Shell",
+    "total_stars": 3040,
+    "stars_period": 408,
+    "url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "arc-kit",
+    "owner": "tractorjuice",
+    "description": "Enterprise Architecture Governance & Vendor Procurement Toolkit",
+    "language": "HTML",
+    "total_stars": 665,
+    "stars_period": 143,
+    "url": "https://github.com/tractorjuice/arc-kit",
+    "scraped_at": "2026-04-19T02:26:51.698503+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
