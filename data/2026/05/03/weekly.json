@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "skills",
+    "owner": "mattpocock",
+    "description": "Skills for Real Engineers. Straight from my .claude directory.",
+    "language": "Shell",
+    "total_stars": 54638,
+    "stars_period": 33628,
+    "url": "https://github.com/mattpocock/skills",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "free-claude-code",
+    "owner": "Alishahryar1",
+    "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
+    "language": "Python",
+    "total_stars": 20126,
+    "stars_period": 12928,
+    "url": "https://github.com/Alishahryar1/free-claude-code",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "TradingAgents",
+    "owner": "TauricResearch",
+    "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "language": "Python",
+    "total_stars": 61860,
+    "stars_period": 6152,
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "hackingtool",
+    "owner": "Z4nzu",
+    "description": "ALL IN ONE Hacking Tool For Hackers",
+    "language": "Python",
+    "total_stars": 70310,
+    "stars_period": 7925,
+    "url": "https://github.com/Z4nzu/hackingtool",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "ds2api",
+    "owner": "CJackHwang",
+    "description": "DeepSeek-Compatible Middleware Interface: A technical exploration project in Go, focusing on high-concurrency protocol adaptation. It serves as a reference implementation for converting diverse web protocols into standardized formats.",
+    "language": "Go",
+    "total_stars": 3154,
+    "stars_period": 1775,
+    "url": "https://github.com/CJackHwang/ds2api",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "andrej-karpathy-skills",
+    "owner": "forrestchang",
+    "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+    "language": null,
+    "total_stars": 106222,
+    "stars_period": 21896,
+    "url": "https://github.com/forrestchang/andrej-karpathy-skills",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "maigret",
+    "owner": "soxoj",
+    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+    "language": "Python",
+    "total_stars": 22423,
+    "stars_period": 1833,
+    "url": "https://github.com/soxoj/maigret",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "GitNexus",
+    "owner": "abhigyanpatwari",
+    "description": "GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration",
+    "language": "TypeScript",
+    "total_stars": 34541,
+    "stars_period": 5376,
+    "url": "https://github.com/abhigyanpatwari/GitNexus",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "Pixelle-Video",
+    "owner": "AIDC-AI",
+    "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
+    "language": "Python",
+    "total_stars": 9103,
+    "stars_period": 2023,
+    "url": "https://github.com/AIDC-AI/Pixelle-Video",
+    "scraped_at": "2026-05-03T02:32:32.409329+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  }
+]
