@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "ruflo",
+    "owner": "ruvnet",
+    "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
+    "language": "TypeScript",
+    "total_stars": 38416,
+    "stars_period": 1834,
+    "url": "https://github.com/ruvnet/ruflo",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "TradingAgents",
+    "owner": "TauricResearch",
+    "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "language": "Python",
+    "total_stars": 64819,
+    "stars_period": 3315,
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "maigret",
+    "owner": "soxoj",
+    "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+    "language": "Python",
+    "total_stars": 23588,
+    "stars_period": 1117,
+    "url": "https://github.com/soxoj/maigret",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "DeepSeek-TUI",
+    "owner": "Hmbown",
+    "description": "Coding agent for DeepSeek models that runs in your terminal",
+    "language": "Rust",
+    "total_stars": 2005,
+    "stars_period": 389,
+    "url": "https://github.com/Hmbown/DeepSeek-TUI",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "Pixelle-Video",
+    "owner": "AIDC-AI",
+    "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
+    "language": "Python",
+    "total_stars": 9794,
+    "stars_period": 478,
+    "url": "https://github.com/AIDC-AI/Pixelle-Video",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "skills",
+    "owner": "browserbase",
+    "description": "Claude Agent SDK with a web browsing tool",
+    "language": "JavaScript",
+    "total_stars": 1755,
+    "stars_period": 322,
+    "url": "https://github.com/browserbase/skills",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "n8n-mcp",
+    "owner": "czlonkowski",
+    "description": "A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you",
+    "language": "TypeScript",
+    "total_stars": 19397,
+    "stars_period": 264,
+    "url": "https://github.com/czlonkowski/n8n-mcp",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "jcode",
+    "owner": "1jehuang",
+    "description": "Coding Agent Harness",
+    "language": "Rust",
+    "total_stars": 3326,
+    "stars_period": 587,
+    "url": "https://github.com/1jehuang/jcode",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "openwrt",
+    "owner": "openwrt",
+    "description": "This repository is a mirror ofhttps://git.openwrt.org/openwrt/openwrt.gitIt is for reference only and is not active for check-ins. We will continue to accept Pull Requests here. They will be merged via staging trees then into openwrt.git.",
+    "language": "C",
+    "total_stars": 26571,
+    "stars_period": 14,
+    "url": "https://github.com/openwrt/openwrt",
+    "scraped_at": "2026-05-04T02:33:16.654531+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
