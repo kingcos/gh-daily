@@ -1,0 +1,98 @@
+[
+  {
+    "repo": "bun",
+    "owner": "oven-sh",
+    "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
+    "language": "Rust",
+    "total_stars": 91045,
+    "stars_period": 414,
+    "url": "https://github.com/oven-sh/bun",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "scientific-agent-skills",
+    "owner": "K-Dense-AI",
+    "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+    "language": "Python",
+    "total_stars": 23003,
+    "stars_period": 669,
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "superpowers",
+    "owner": "obra",
+    "description": "An agentic skills framework & software development methodology that works.",
+    "language": "Shell",
+    "total_stars": 193776,
+    "stars_period": 1281,
+    "url": "https://github.com/obra/superpowers",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "Open-Generative-AI",
+    "owner": "Anil-matcha",
+    "description": "Open-source alternative to AI video platforms — Free AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+    "language": "JavaScript",
+    "total_stars": 14288,
+    "stars_period": 393,
+    "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "supertonic",
+    "owner": "supertone-inc",
+    "description": "Lightning-Fast, On-Device, Multilingual TTS — running natively via ONNX.",
+    "language": "Swift",
+    "total_stars": 6676,
+    "stars_period": 745,
+    "url": "https://github.com/supertone-inc/supertonic",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "openhuman",
+    "owner": "tinyhumansai",
+    "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "language": "Rust",
+    "total_stars": 10471,
+    "stars_period": 1601,
+    "url": "https://github.com/tinyhumansai/openhuman",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "RuView",
+    "owner": "ruvnet",
+    "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "language": "Rust",
+    "total_stars": 58154,
+    "stars_period": 990,
+    "url": "https://github.com/ruvnet/RuView",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "codegraph",
+    "owner": "colbymchenry",
+    "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+    "language": "TypeScript",
+    "total_stars": 2349,
+    "stars_period": 397,
+    "url": "https://github.com/colbymchenry/codegraph",
+    "scraped_at": "2026-05-17T02:33:56.959248+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
