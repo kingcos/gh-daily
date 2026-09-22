@@ -1,0 +1,98 @@
+[
+  {
+    "repo": "financial-services",
+    "owner": "anthropics",
+    "description": "",
+    "language": "Python",
+    "total_stars": 36181,
+    "stars_period": 436,
+    "url": "https://github.com/anthropics/financial-services",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "substrate",
+    "owner": "agent-substrate",
+    "description": "Agent Substrate: the core system",
+    "language": "Go",
+    "total_stars": 2834,
+    "stars_period": 301,
+    "url": "https://github.com/agent-substrate/substrate",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "univer",
+    "owner": "dream-num",
+    "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+    "language": "TypeScript",
+    "total_stars": 15135,
+    "stars_period": 202,
+    "url": "https://github.com/dream-num/univer",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "claude-code-templates",
+    "owner": "davila7",
+    "description": "CLI tool for configuring and monitoring Claude Code",
+    "language": "Python",
+    "total_stars": 31001,
+    "stars_period": 113,
+    "url": "https://github.com/davila7/claude-code-templates",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "ax",
+    "owner": "google",
+    "description": "Google's open agentic orchestration runtime",
+    "language": "Go",
+    "total_stars": 7212,
+    "stars_period": 2324,
+    "url": "https://github.com/google/ax",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "mvt",
+    "owner": "mvt-project",
+    "description": "MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.",
+    "language": "Python",
+    "total_stars": 13876,
+    "stars_period": 441,
+    "url": "https://github.com/mvt-project/mvt",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "treg",
+    "owner": "superdesigndev",
+    "description": "OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn",
+    "language": "Python",
+    "total_stars": 2077,
+    "stars_period": 197,
+    "url": "https://github.com/superdesigndev/treg",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "video-use",
+    "owner": "browser-use",
+    "description": "Edit videos with coding agents",
+    "language": "Python",
+    "total_stars": 25656,
+    "stars_period": 155,
+    "url": "https://github.com/browser-use/video-use",
+    "scraped_at": "2026-09-23T00:53:22.114899+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
