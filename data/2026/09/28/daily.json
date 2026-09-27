@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "paperclip",
+    "owner": "paperclipai",
+    "description": "The open-source app everyone uses to manage agents at work",
+    "language": "TypeScript",
+    "total_stars": 89061,
+    "stars_period": 2527,
+    "url": "https://github.com/paperclipai/paperclip",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "hindsight",
+    "owner": "vectorize-io",
+    "description": "Hindsight: Agent Memory That Learns",
+    "language": "Python",
+    "total_stars": 36235,
+    "stars_period": 4463,
+    "url": "https://github.com/vectorize-io/hindsight",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "VoiceStudio",
+    "owner": "debpalash",
+    "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+    "language": "Python",
+    "total_stars": 39256,
+    "stars_period": 3060,
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "ai-engineering-from-scratch",
+    "owner": "rohitg00",
+    "description": "Learn it. Build it. Ship it for others.",
+    "language": "Python",
+    "total_stars": 58989,
+    "stars_period": 848,
+    "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "PipePipe",
+    "owner": "InfinityLoop1308",
+    "description": "An open-source Android app to let you browse YouTube and other services freely.",
+    "language": "Shell",
+    "total_stars": 6470,
+    "stars_period": 139,
+    "url": "https://github.com/InfinityLoop1308/PipePipe",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "scriptc",
+    "owner": "vercel-labs",
+    "description": "TypeScript-to-Native Compiler",
+    "language": "TypeScript",
+    "total_stars": 5293,
+    "stars_period": 76,
+    "url": "https://github.com/vercel-labs/scriptc",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "openrig",
+    "owner": "mvschwarz",
+    "description": "Multi-agent harness that runs Claude Code and Codex together as one system",
+    "language": "TypeScript",
+    "total_stars": 764,
+    "stars_period": 114,
+    "url": "https://github.com/mvschwarz/openrig",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "univer",
+    "owner": "dream-num",
+    "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+    "language": "TypeScript",
+    "total_stars": 20005,
+    "stars_period": 920,
+    "url": "https://github.com/dream-num/univer",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "Madeira",
+    "owner": "willfaust",
+    "description": "Run x86-64 Windows PC games on jailed iOS via FEX-Emu + Wine + DXMT",
+    "language": "C",
+    "total_stars": 745,
+    "stars_period": 117,
+    "url": "https://github.com/willfaust/Madeira",
+    "scraped_at": "2026-09-28T00:55:13.461183+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
