@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "AnyPS5",
+    "owner": "boykopovar",
+    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+    "language": "C++",
+    "total_stars": 34803,
+    "stars_period": 27263,
+    "url": "https://github.com/boykopovar/AnyPS5",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "skills",
+    "owner": "mattpocock",
+    "description": "Skills for Real Engineers. Straight from my .agents directory.",
+    "language": "Shell",
+    "total_stars": 289349,
+    "stars_period": 11139,
+    "url": "https://github.com/mattpocock/skills",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "e2e",
+    "owner": "tester-army",
+    "description": "Next generation e2e testing framework for web and mobile apps.",
+    "language": "TypeScript",
+    "total_stars": 10021,
+    "stars_period": 5582,
+    "url": "https://github.com/tester-army/e2e",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "raddebugger",
+    "owner": "EpicGames",
+    "description": "A native, user-mode, multi-process, graphical debugger.",
+    "language": "C",
+    "total_stars": 8474,
+    "stars_period": 845,
+    "url": "https://github.com/EpicGames/raddebugger",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "hyperframes",
+    "owner": "heygen-com",
+    "description": "Write HTML. Render video. Built for agents.",
+    "language": "TypeScript",
+    "total_stars": 62561,
+    "stars_period": 4482,
+    "url": "https://github.com/heygen-com/hyperframes",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "claude-mem",
+    "owner": "thedotmack",
+    "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "language": "TypeScript",
+    "total_stars": 100384,
+    "stars_period": 3762,
+    "url": "https://github.com/thedotmack/claude-mem",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "plugins",
+    "owner": "cursor",
+    "description": "Cursor plugin specification and official plugins",
+    "language": "TypeScript",
+    "total_stars": 11193,
+    "stars_period": 1144,
+    "url": "https://github.com/cursor/plugins",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "text-to-cad",
+    "owner": "earthtojake",
+    "description": "Give your agent CAD superpowers.",
+    "language": "Python",
+    "total_stars": 19930,
+    "stars_period": 2441,
+    "url": "https://github.com/earthtojake/text-to-cad",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "flutter",
+    "owner": "flutter",
+    "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+    "language": "Dart",
+    "total_stars": 180083,
+    "stars_period": 806,
+    "url": "https://github.com/flutter/flutter",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "diagram-design",
+    "owner": "cathrynlavery",
+    "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "language": "HTML",
+    "total_stars": 53864,
+    "stars_period": 9237,
+    "url": "https://github.com/cathrynlavery/diagram-design",
+    "scraped_at": "2026-10-14T03:13:03.147644+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  }
+]
