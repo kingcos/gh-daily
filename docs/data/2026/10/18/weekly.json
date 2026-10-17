@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "rea",
+    "owner": "morluto",
+    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+    "language": "TypeScript",
+    "total_stars": 305817,
+    "stars_period": 248962,
+    "url": "https://github.com/morluto/rea",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "artcraft",
+    "owner": "storytold",
+    "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+    "language": "Rust",
+    "total_stars": 31650,
+    "stars_period": 20267,
+    "url": "https://github.com/storytold/artcraft",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "AnyPS5",
+    "owner": "boykopovar",
+    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+    "language": "C++",
+    "total_stars": 41422,
+    "stars_period": 20518,
+    "url": "https://github.com/boykopovar/AnyPS5",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "diagram-design",
+    "owner": "cathrynlavery",
+    "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "language": "HTML",
+    "total_stars": 56934,
+    "stars_period": 9024,
+    "url": "https://github.com/cathrynlavery/diagram-design",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "claude-plugins-official",
+    "owner": "anthropics",
+    "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+    "language": "Python",
+    "total_stars": 41580,
+    "stars_period": 2328,
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "hyperframes",
+    "owner": "heygen-com",
+    "description": "Write HTML. Render video. Built for agents.",
+    "language": "TypeScript",
+    "total_stars": 65891,
+    "stars_period": 5601,
+    "url": "https://github.com/heygen-com/hyperframes",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "context-mode",
+    "owner": "mksglu",
+    "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+    "language": "TypeScript",
+    "total_stars": 30487,
+    "stars_period": 4207,
+    "url": "https://github.com/mksglu/context-mode",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "ghidra",
+    "owner": "NationalSecurityAgency",
+    "description": "Ghidra is a software reverse engineering (SRE) framework",
+    "language": "Java",
+    "total_stars": 90177,
+    "stars_period": 7510,
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "skills",
+    "owner": "mattpocock",
+    "description": "Skills for Real Engineers. Straight from my .agents directory.",
+    "language": "Shell",
+    "total_stars": 294982,
+    "stars_period": 11937,
+    "url": "https://github.com/mattpocock/skills",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  },
+  {
+    "repo": "billion-context",
+    "owner": "ranxianglei",
+    "description": "A context-compression plugin for small context windows (a 100K context is enough), token savings (5x fewer tokens), and month-long single sessions (billions of tokens).上下文压缩插件，兼顾小窗口(100k上下文足矣)省token(省5倍token)和超长会话(数月级别几十亿token单会话)。billion-context is all you need",
+    "language": "TypeScript",
+    "total_stars": 1692,
+    "stars_period": 779,
+    "url": "https://github.com/ranxianglei/billion-context",
+    "scraped_at": "2026-10-18T04:31:17.843882+08:00",
+    "trending_type": "weekly",
+    "trending_lang": ""
+  }
+]
