@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "security-audit-skill",
+    "owner": "cloudflare",
+    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "total_stars": 44172,
+    "stars_period": 2271,
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "OpenShell",
+    "owner": "NVIDIA",
+    "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+    "language": "Rust",
+    "total_stars": 19389,
+    "stars_period": 893,
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "agent-toolkit-for-aws",
+    "owner": "aws",
+    "description": "Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+    "language": "Python",
+    "total_stars": 3085,
+    "stars_period": 11,
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "hallmark",
+    "owner": "Nutlope",
+    "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "language": "CSS",
+    "total_stars": 31989,
+    "stars_period": 570,
+    "url": "https://github.com/Nutlope/hallmark",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "claude-howto",
+    "owner": "luongnv89",
+    "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+    "language": "Python",
+    "total_stars": 44437,
+    "stars_period": 442,
+    "url": "https://github.com/luongnv89/claude-howto",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "impeccable",
+    "owner": "pbakaus",
+    "description": "The design language that makes your AI harness better at design.",
+    "language": "Rust",
+    "total_stars": 86266,
+    "stars_period": 733,
+    "url": "https://github.com/pbakaus/impeccable",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "microduck",
+    "owner": "pollen-robotics",
+    "description": "A Tiny biped duck robot 🦆",
+    "language": "Rust",
+    "total_stars": 10889,
+    "stars_period": 381,
+    "url": "https://github.com/pollen-robotics/microduck",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "gemini-cli",
+    "owner": "google-gemini",
+    "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "language": "TypeScript",
+    "total_stars": 107936,
+    "stars_period": 38,
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "ebook-treasure-chest",
+    "owner": "jbiaojerry",
+    "description": "欢迎来到电子书下载宝库，一个汇聚了各类电子书下载链接的地方。无论你是喜欢阅读经典文学、经管励志、终身学习、职场创业、技术手册还是其他类型的书籍，这里都能满足你的需求。 该库涵盖了帆书app(原樊登读书)、微信读书、京东读书、喜马拉雅等读书app的大部分电子书。",
+    "language": "Python",
+    "total_stars": 22533,
+    "stars_period": 220,
+    "url": "https://github.com/jbiaojerry/ebook-treasure-chest",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  },
+  {
+    "repo": "cindy",
+    "owner": "makecindy",
+    "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+    "language": "TypeScript",
+    "total_stars": 4013,
+    "stars_period": 471,
+    "url": "https://github.com/makecindy/cindy",
+    "scraped_at": "2026-10-25T04:42:52.177811+08:00",
+    "trending_type": "daily",
+    "trending_lang": ""
+  }
+]
